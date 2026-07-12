@@ -1,3 +1,7 @@
+output "network_manager_admin_rule_collections_id" {
+  description = "Map of id values across all network_manager_admin_rule_collections, keyed the same as var.network_manager_admin_rule_collections"
+  value       = { for k, v in azurerm_network_manager_admin_rule_collection.network_manager_admin_rule_collections : k => v.id }
+}
 output "network_manager_admin_rule_collections_description" {
   description = "Map of description values across all network_manager_admin_rule_collections, keyed the same as var.network_manager_admin_rule_collections"
   value       = { for k, v in azurerm_network_manager_admin_rule_collection.network_manager_admin_rule_collections : k => v.description }
